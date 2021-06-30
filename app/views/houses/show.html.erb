@@ -1,0 +1,31 @@
+<h1>閲覧</h1>
+<div class="container">
+<p>物件名:<%= @house.name %></p>
+<p>賃料:<%= @house.rent %>円</p>
+<p>住所:<%= @house.address %></p>
+<p>築年数:<%= @house.age %>年</p>
+<p>備考:<%= @house.content %></p>
+</div>
+
+<hr>
+
+<% if @stations.present? %>
+
+  <% @stations.each_with_index do |station, i| %>
+    <h2>最寄り駅
+       <%= i + 1 %>
+    </h2>
+<div class="container">
+    <p>路線名　<%= station.route %></p>
+    <p>駅名 <%= station.station %></p>
+    <p>徒歩分数 <%= station.walk %>分</p>
+</div>
+  <% end %>
+<% end %>
+
+
+
+
+
+<%= link_to '編集', edit_house_path %>
+<%= link_to '戻る', houses_path %>

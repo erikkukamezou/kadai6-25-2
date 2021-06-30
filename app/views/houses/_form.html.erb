@@ -1,0 +1,58 @@
+<%= form_with(model: @house, local: true) do |form| %>
+
+    <div class="house_name">
+      <%= form.label :物件名 %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div class="house_rent">
+      <%= form.label :賃料 %>
+      <%= form.text_field :rent %>
+    </div>
+
+    <div class="house_address">
+        <%= form.label :住所 %>
+        <%= form.text_field :address %>
+      </div>
+
+      <div class="house_age">
+        <%= form.label :築年数 %>
+        <%= form.text_field :age %>
+      </div>
+
+      <div class="house_content">
+        <%= form.label :備考 %>
+        <%= form.text_area :content %>
+      </div>
+
+      <hr>
+
+      <%= form.fields_for :stations do |station| %>
+      <p>最寄り駅
+        <%= station.index + 1 %>
+      </p>
+      <div class="station_route">
+          <%= station.label :路線名 %>
+          <%= station.text_field :route %>
+      </div>
+      <div class="station">
+          <%= station.label :駅名 %>
+          <%= station.text_field :station %>
+      </div>
+      <div class="station_walk">
+          <%= station.label :徒歩分数 %>
+          <%= station.text_field :walk %>
+      </div>
+
+  <% end %>
+
+
+
+
+    <%= form.submit name ="登録"%>
+
+
+
+    <%= link_to '戻る', houses_path %>
+
+<% end %>
