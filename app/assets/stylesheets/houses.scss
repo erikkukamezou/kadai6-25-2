@@ -1,0 +1,37 @@
+// Place all the styles related to the houses controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+html {
+  font-size: 62.5%;
+}
+
+a:link {
+  color: gray;
+}
+
+a:visited {
+  color: #000;
+}
+
+body {
+  font-size: 1.4rem;
+}
+
+td, th {
+  padding: 0 1rem;
+}
+
+.bold {
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+hr{
+  border: none;
+  height:1px;
+  background-color: black;
+}
